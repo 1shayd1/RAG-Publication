@@ -1,0 +1,86 @@
+[
+  {
+    "id": "library",
+    "title": "Library rules",
+    "text": "Library rules.\n\nStudents may borrow up to 5 books at the same time. The standard loan period is 14 days and can be extended once for another 7 days if nobody has reserved the book.\n\nA fine of 10 rubles per day is charged for overdue books. Lost or damaged books must be replaced with the same edition or paid for in full.\n\nThe library is open from 9:00 to 20:00 on weekdays and from 10:00 to 16:00 on Saturdays. It is closed on Sundays and public holidays.",
+    "question": "How many days is the standard loan period for library books?",
+    "answer": "14"
+  },
+  {
+    "id": "dormitory",
+    "title": "Dormitory rules",
+    "text": "Dormitory rules.\n\nQuiet hours in the dormitory start at 23:00 and end at 7:00. During quiet hours, loud music, parties and the use of power tools are not allowed.\n\nGuests may visit residents until 21:00 and must leave an ID document at the front desk. Residents are responsible for the behavior of their guests.\n\nCooking is allowed only in the shared kitchens. Electric heaters and kettles with open heating elements are not allowed in rooms because of fire safety rules.",
+    "question": "At what time do quiet hours start in the dormitory?",
+    "answer": "23:00"
+  },
+  {
+    "id": "scholarship",
+    "title": "Academic scholarship",
+    "text": "Academic scholarship.\n\nThe basic academic scholarship is 4200 rubles per month. It is paid to full-time students who passed all exams of the previous semester without failing grades.\n\nStudents who received only excellent grades can apply for an increased scholarship. The application must be submitted to the scholarship committee before the end of the first week of the semester.\n\nThe scholarship is paid to the bank card of the student on the 25th day of each month. Students must inform the dean's office if they change their bank card.",
+    "question": "How much is the basic academic scholarship per month?",
+    "answer": "4200"
+  },
+  {
+    "id": "exam_retake",
+    "title": "Exam retakes",
+    "text": "Exam retakes.\n\nA student who received a failing grade has the right to retake the exam. Retakes are organized by the dean's office, and the dates are published on the faculty notice board.\n\nThe first retake is taken with the regular lecturer. If the student fails again, the exam is taken before a commission of three teachers appointed by the head of the department.\n\nStudents with a valid medical certificate may ask the dean's office to move an exam to another date. The certificate must be handed in within three days after the missed exam.",
+    "question": "Which office organizes exam retakes?",
+    "answer": "dean"
+  },
+  {
+    "id": "sports",
+    "title": "Sports center",
+    "text": "Sports center.\n\nThe swimming pool of the sports center opens at 7:30 on weekdays and closes at 21:00. On weekends it works from 9:00 to 18:00. Every visitor must wear a swimming cap.\n\nStudents can use the gym for free if they show a valid student ID at the entrance. Visitors from outside the university pay an entrance fee at the reception desk.\n\nSports sections such as volleyball, basketball and table tennis hold training sessions in the evening. Registration for the sections is done with the head coach.",
+    "question": "At what time does the swimming pool open on weekdays?",
+    "answer": "7:30"
+  },
+  {
+    "id": "canteen",
+    "title": "University canteen",
+    "text": "University canteen.\n\nThe canteen on the first floor of the main building serves lunch from 11:30 to 15:00. The complex lunch with soup, a main dish and a drink costs 245 rubles.\n\nStudents can pay with cash or with a bank card. Payment with the student ID card is not available at the moment.\n\nVegetarian dishes are marked with a green label on the menu board. Food from outside is not allowed inside the canteen hall, but students may use the microwave ovens in the rest area.",
+    "question": "How much does the complex lunch cost in the canteen?",
+    "answer": "245"
+  },
+  {
+    "id": "wifi",
+    "title": "Campus Wi-Fi",
+    "text": "Campus Wi-Fi.\n\nStudents can connect to the wireless network named CampusNet-Edu in all academic buildings. To log in, use the university e-mail address and the personal password from the student portal.\n\nIf you forgot your password, you can reset it at the IT help desk in room 214. Bring your student ID card, because the staff must check your identity.\n\nThe network is intended for study purposes. Downloading large files and using file sharing programs is blocked during working hours to keep the connection fast for everyone.",
+    "question": "What is the name of the student Wi-Fi network?",
+    "answer": "CampusNet-Edu"
+  },
+  {
+    "id": "bicycles",
+    "title": "Bicycle parking",
+    "text": "Bicycle parking.\n\nThe covered bicycle parking of the university is located behind Building 3. It is available for students and staff every day from 6:00 to 23:00.\n\nTo use the parking, a bicycle must be registered at the security desk at the main entrance. Registration is free and takes about five minutes. Every bicycle receives a numbered sticker.\n\nThe university is not responsible for bicycles left without a lock. Bicycles that stay in the parking for more than two months without use may be moved to a storage room.",
+    "question": "Behind which building is the bicycle parking located?",
+    "answer": "Building 3"
+  },
+  {
+    "id": "internship",
+    "title": "Internship rules",
+    "text": "Internship rules.\n\nThe summer internship lasts four weeks and starts right after the exam session. Students find a company themselves or choose one from the list prepared by the career center.\n\nAfter the internship, the student writes a report of 10 to 15 pages. The report must be signed by the company supervisor and certified with the stamp of the company.\n\nThe report is defended in front of a commission at the department. The result of the defense is written in the record book and affects the right to receive the scholarship.",
+    "question": "Who must sign the internship report?",
+    "answer": "supervisor"
+  },
+  {
+    "id": "student_id",
+    "title": "Student ID card",
+    "text": "Student ID card.\n\nThe student ID card is used as a pass to the university buildings, as a library card and as a proof of student status. Students must carry it with them at all times.\n\nIf the card is lost, the student must report it to the registrar's office as soon as possible. A replacement card costs 350 rubles and is issued within five working days.\n\nAfter graduation or expulsion, the card must be returned to the registrar's office. The card of a student who changed the surname is replaced for free after a document check.",
+    "question": "How much does a replacement student ID card cost?",
+    "answer": "350"
+  },
+  {
+    "id": "medical",
+    "title": "Medical center",
+    "text": "Medical center.\n\nThe university medical center is located in room 108 on the ground floor of the main building. It is open on weekdays from 9:00 to 17:00. A nurse is on duty during all working hours.\n\nFirst aid and measuring of blood pressure and temperature are free for all students. For a medical certificate for the dean's office, students need a referral from a doctor of their city clinic.\n\nIn case of an emergency, students must call the ambulance first and then inform the security desk, so that the staff can meet the doctors at the entrance.",
+    "question": "In which room is the university medical center located?",
+    "answer": "108"
+  },
+  {
+    "id": "thesis",
+    "title": "Thesis requirements",
+    "text": "Thesis requirements.\n\nEvery bachelor thesis is checked by an anti-plagiarism system. The originality of the text must be at least 70 percent, otherwise the thesis is returned to the student for revision.\n\nThe finished thesis is submitted to the department in printed form and in electronic form not later than two weeks before the defense. The supervisor writes a review of the work.\n\nThe defense takes place in June in front of the state examination commission. The student gives a presentation of ten minutes and then answers the questions of the commission.",
+    "question": "What is the minimum originality percentage required for a thesis?",
+    "answer": "70"
+  }
+]
