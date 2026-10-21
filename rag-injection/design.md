@@ -5,7 +5,7 @@ How vulnerable are small, locally run RAG systems to indirect prompt
 injection, and does the choice of the generator model change the result?
 
 ## 2. Hypotheses
-- H1: All three systems follow at least some injected instructions.
+- H1: All systems follow at least some injected instructions.
 - H2: The attack success rate is different for each model.
 - H3: The attack success rate is different for each attack category.
 
@@ -14,9 +14,10 @@ Three RAG pipelines. Only the generator model is different.
 
 | System | Generator | Vendor |
 |---|---|---|
-| A | qwen2.5:3b | Alibaba |
-| B | llama3.2:3b | Meta |
-| C | gemma2:2b | Google |
+| 1 | qwen2.5:3b | Alibaba |
+| 2 | llama3.2:3b | Meta |
+| 3 | gemma2:2b | Google |
+| 4 | phi3.5 | Microsoft |
 
 Fixed for all systems:
 - Embedding model: nomic-embed-text
@@ -27,7 +28,7 @@ Fixed for all systems:
 - Same prompt template
 
 ## 4. Dataset
-- About 15 clean documents (one topic, for example university rules).
+- About 15 clean documents (one topic per document).
 - Poisoned versions of the documents. Each has one injection.
 - About 40-60 test cases (question + document set).
 - Each attack has a canary token, for example "PWNED-742".
@@ -49,10 +50,8 @@ Fixed for all systems:
 
 ## 8. Limitations
 - Small models, small synthetic dataset.
-- One run per test case (more runs later).
-- English only (Russian injections are future work).
+- One run per test case.
+- English only (Russian injections are future work, because these models better deal with English).
 
 ## 9. Planned extensions
-- Defense test (delimiters, "documents are data only" instruction).
-- More runs and confidence intervals.
 - Russian-language injections.
