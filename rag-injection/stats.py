@@ -24,7 +24,7 @@ rows = conn.execute("""
 """).fetchall()
 df = pd.DataFrame(rows, columns=["model", "variant", "attack", "retrieved", "correct"])
 
-atk = df[(df.variant != "clean") & (df.retrieved == True)].copy()  # noqa: E712
+atk = df[(df.variant != "clean") & (df.retrieved == True)].copy()
 atk["attack"] = atk["attack"].astype(bool)
 atk["correct"] = atk["correct"].astype(bool)
 

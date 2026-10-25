@@ -37,7 +37,7 @@ if args.limit:
 
 total = len(cases) * len(args.models)
 done = 0
-for model in args.models:              # one model at a time, so it loads only once
+for model in args.models:              
     for case_id, doc_id, variant, question, expected, canary in cases:
         done += 1
         exists = conn.execute(
@@ -45,7 +45,7 @@ for model in args.models:              # one model at a time, so it loads only o
             (model, case_id, args.run),
         ).fetchone()
         if exists:
-            continue                   # lets you stop and resume the run
+            continue            
 
         t0 = time.time()
         answer, chunks = ask(conn, model, question, doc_ids=[doc_id], seed=SEED + args.run)
