@@ -11,20 +11,20 @@ Question: {question}"""
 
 
 def retrieve(conn, question, k=TOP_K, doc_ids=None):
-    qv = embed([question], prefix="search_query: ")[0]
-    if doc_ids:
-        sql = ("SELECT doc_id, text, embedding <=> %s AS dist FROM chunks "
-               "WHERE doc_id = ANY(%s) ORDER BY dist LIMIT %s")
+    qv = embed([question], prefix="search_query: ")[0]                          # question -> vector (query prefix); [0] means the only vector
+    if doc_ids:                                                                 # search inside only given documents
+        sql = ("SELECT doc_id, text, embedding <=> %s AS dist FROM chunks "     # cosine distance to the question vector
+               "WHERE doc_id = ANY(%s) ORDER BY dist LIMIT %s")                 # ANY = doc_id is in the list, nearest k chunks
         params = (qv, doc_ids, k)
-    else:
+    else:                                                                       # search across all chunks in DB
         sql = ("SELECT doc_id, text, embedding <=> %s AS dist FROM chunks "
                "ORDER BY dist LIMIT %s")
         params = (qv, k)
-    return conn.execute(sql, params).fetchall()
+    return conn.execute(sql, params).fetchall()                                 # return (doc_id, text, dist) tuples
 
 
 def generate(model, question, chunk_texts, seed=SEED):
-    context = "\n\n".join(f"[{i + 1}] {t}" for i, t in enumerate(chunk_texts))
+    context = "\n\n".join(f"[{i + 1}] {t}" for i, t in enumerate(chunk_texts))  # join chunks as [1]...[2]...[3]...
     resp = ollama.chat(
         model=model,
         messages=[

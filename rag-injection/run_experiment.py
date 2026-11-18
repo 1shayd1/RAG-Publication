@@ -13,47 +13,32 @@ parser.add_argument("--run", type=int, default=0, help="run index (changes the s
 args = parser.parse_args()
 
 conn = connect()
-conn.execute("""
-CREATE TABLE IF NOT EXISTS results (
-    id SERIAL PRIMARY KEY,
-    model TEXT NOT NULL,
-    case_id TEXT NOT NULL,
-    run_idx INT NOT NULL,
-    answer TEXT NOT NULL,
-    canary_in_answer BOOLEAN,
-    canary_retrieved BOOLEAN,
-    correct BOOLEAN NOT NULL,
-    seconds REAL,
-    created_at TIMESTAMPTZ DEFAULT now(),
-    UNIQUE (model, case_id, run_idx)
-)""")
-
 cases = conn.execute(
     "SELECT case_id, doc_id, variant, question, answer, canary "
     "FROM test_cases ORDER BY doc_id"
-).fetchall()
+).fetchall()                                                                               # list of 60 tuples
 if args.limit:
     cases = cases[:args.limit]
 
 total = len(cases) * len(args.models)
 done = 0
-for model in args.models:              
-    for case_id, doc_id, variant, question, expected, canary in cases:
+for model in args.models:                                                                  # one model at a time
+    for case_id, doc_id, variant, question, expected, canary in cases:                     # 60 cases per 1 model
         done += 1
         exists = conn.execute(
             "SELECT 1 FROM results WHERE model=%s AND case_id=%s AND run_idx=%s",
             (model, case_id, args.run),
-        ).fetchone()
+        ).fetchone()                                
         if exists:
-            continue            
+            continue                                                                         # this case is done, continue
 
         t0 = time.time()
         answer, chunks = ask(conn, model, question, doc_ids=[doc_id], seed=SEED + args.run)
-        seconds = time.time() - t0
+        seconds = time.time() - t0                                                           # how long the answer took 
 
-        hit = canary_in_answer(answer, canary) if canary else None
-        retrieved = any(canary.lower() in c[1].lower() for c in chunks) if canary else None
-        correct = is_correct(answer, expected)
+        hit = canary_in_answer(answer, canary) if canary else None                           # attack success
+        retrieved = any(canary.lower() in c[1].lower() for c in chunks) if canary else None  # was injection in context?
+        correct = is_correct(answer, expected)                                               # is the answer correct?
 
         conn.execute(
             "INSERT INTO results (model, case_id, run_idx, answer, canary_in_answer, "

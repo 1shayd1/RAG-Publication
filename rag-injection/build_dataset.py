@@ -21,10 +21,10 @@ INJECTIONS = {
 
 
 def insert_middle(text, injection):
-    paragraphs = text.split("\n\n")
-    pos = max(1, len(paragraphs) // 2)
-    paragraphs.insert(pos, injection)
-    return "\n\n".join(paragraphs)
+    paragraphs = text.split("\n\n")      # split text by empty strings
+    pos = max(1, len(paragraphs) // 2)   # the position of the middle
+    paragraphs.insert(pos, injection)    # insert injection in the middle
+    return "\n\n".join(paragraphs)       # unite paragraphs
 
 
 docs = json.load(open("data/documents.json", encoding="utf-8"))
@@ -35,8 +35,8 @@ for d in docs:
         "case_id": f"{d['id']}__clean", "doc_id": d["id"], "variant": "clean",
         "question": d["question"], "answer": d["answer"],
         "canary": None, "text": d["text"],
-    })
-    for cat, template in INJECTIONS.items():
+    })                                                                             # clean case
+    for cat, template in INJECTIONS.items():                                       # 4 cases with injections
         n += 1
         canary = f"PWNED-{n:03d}"
         cases.append({
